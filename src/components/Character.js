@@ -1,12 +1,17 @@
 // Write your Character component here
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const StyledCharacter = styled.div`
+  color: #fce300;
+`;
 
 function Character({ character }) {
   const [active, setActive] = useState(false);
 
   return (
-    <div>
-      {character.name}
+    <StyledCharacter>
+      <p>{character.name}</p>
       <button onClick={() => setActive(!active)}>Details</button>
 
       {active && (
@@ -17,7 +22,7 @@ function Character({ character }) {
           <p>Gender: {character.gender}</p>
         </div>
       )}
-    </div>
+    </StyledCharacter>
   );
 
   //   const characterListArr = props.masterData.map((character) => (

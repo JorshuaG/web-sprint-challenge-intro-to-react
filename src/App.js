@@ -3,6 +3,11 @@ import "./App.css";
 import axios from "axios";
 import { BASE_URL } from "./index.js";
 import Character from "./components/Character";
+import styled from "styled-components";
+
+const StyledApp = styled.div`
+  font-family: "Tourney", cursive;
+`;
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -23,7 +28,7 @@ const App = () => {
   // sync up with, if any.
 
   return (
-    <div className="App">
+    <StyledApp className="App">
       <h1 className="Header">Characters</h1>
 
       {data.map((character) => (
@@ -37,7 +42,7 @@ const App = () => {
           image={data.homeworld}
         />
       ))}
-    </div>
+    </StyledApp>
   );
 };
 
