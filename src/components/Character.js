@@ -6,13 +6,20 @@ const StyledCharacter = styled.div`
   color: #fce300;
 `;
 
+const StyledButton = styled.button`
+  box-shadow: 0 8px 16px 0 rgba(252, 227, 0, 0.2),
+    0 6px 20px 0 rgba(252, 227, 0, 0.19);
+  background-color: black;
+  color: #fce300;
+`;
+
 function Character({ character }) {
   const [active, setActive] = useState(false);
 
   return (
     <StyledCharacter>
       <p>{character.name}</p>
-      <button onClick={() => setActive(!active)}>Details</button>
+      <StyledButton onClick={() => setActive(!active)}>Details</StyledButton>
 
       {active && (
         <div>
